@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/mustard-ui@latest/dist/css/mustard-ui.min.css">
+  <link rel="stylesheet" href="/css/block/master.css">
+  <link rel="stylesheet" href="/css/fonts/font/stylesheet.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/reset.css">
+  <title>Document</title>
+
+  <style>
+    .elastic li.hide {
+      display: none;
+    }
+
+    .elastic {
+      position: fixed;
+      top: 5%; 
+      left: 0; 
+      background-color: #fff; 
+      padding: 0;
+      margin: 0; 
+      border: 1px solid #ccc; 
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+      z-index: 9999; 
+    }
+
+    .elastic li {
+      list-style-type: none; 
+      padding: 10px; 
+      cursor: pointer; 
+    }
+  </style>
+</head>
+<body>
+<!-- <div class="col-lg-12">
+  
+  <input type="text" id="elastic">
+  <ul class="elastic" id="elastic-list" style="display: none; z-index: 999;">
+    <li>блаблаблау</li>
+    <li>уу</li>
+    <li>равыгрг</li>
+    <li>пампапама</li>
+    <li>кукукук</li>
+    <li>чвлаш</li>
+  </ul> -->
+
+  <div class="master-name"><p>Майстер-класи</p>
+    <input type="text" placeholder="Шукати..." class="input" id="elastic" >  <!-- onclick="showList()" -->
+  </div>
+  <div class="elastic-block">
+        <ul class="elastic" id="elastic-list" style="display: none; z-index: 999;">
+          <li>блаблаблау</li>
+          <li>уу</li>
+          <li>равыгрг</li>
+          <li>пампапама</li>
+          <li>кукукук</li>
+          <li>чвлаш</li>
+        </ul>
+      </div>
+  
+</div>
+<br><br><br><br><br>
+  <a href="master-clas.html">fdsff</a>
+
+
+<script>
+document.addEventListener('click', function(event) {
+  const input = document.querySelector('#elastic');
+  const list = document.getElementById('elastic-list');
+
+  // Перевірка, чи клік був на полі вводу або на списку
+  if (event.target !== input && event.target !== list) {
+    // Якщо клік був не на полі вводу або списку, ховаємо список
+    list.style.display = 'none';
+  }
+});
+
+document.querySelector('#elastic').addEventListener('focus', function() {
+  let list = document.getElementById('elastic-list');
+  list.style.display = 'block';
+});
+
+  document.querySelector('#elastic').oninput = function(){
+  let val = this.value.trim(); //trim - обрізає пробіли
+  let elasticItems = document.querySelectorAll('.elastic li');
+  if (val != ''){
+    elasticItems.forEach(function(elem){
+      if (elem.innerText.search(val) == -1) {
+        elem.classList.add('hide');
+      }
+      else {
+        elem.classList.remove('hide');
+      }
+
+    });
+  }
+  else {
+    elasticItems.forEach(function(elem){
+      elem.classList.remove('hide');
+    });
+  }
+}
+
+</script>
+</body>
+</html>

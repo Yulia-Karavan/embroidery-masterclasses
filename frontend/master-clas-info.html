@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <link rel="stylesheet" href="/css/block/master-class-info.css">
+  <link rel="stylesheet" href="/css/fonts/font/stylesheet.css">
+  <link rel="stylesheet" href="/css/block/header.css">
+  <link rel="stylesheet" href="/css/block/footer.css">
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <title>Майстер-класи</title>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-row">
+        <div class="header-logo"><img src="/img/logo.png" alt="Logo"></div>
+        <nav class="header-nav">
+          <ul>
+            <li><a href="index.html">головна</a></li>
+            <li><a href="gallery.html">галерея</a></li>
+            <li><a href="master-clas.html">майстер-класи</a></li>
+          </ul>
+        </nav>
+        <div class="header-login">
+          <a href="log.html">увійти</a>
+          <a href="reg.html" class="bth">зареєструватись</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="master-class">
+    <div class="container">
+      <div class="master-class-content">
+        <h1 class="master-class-head">Назва майстер класу</h1>
+        <div class="master-class-text">
+          <p>Запрошуємо вас на наші майстер-класи з вишивки, де ви зможете зануритися у 
+            світ вишиваного мистецтва та навчитися створювати власні шедеври. Під керівництвом 
+            досвідчених майстринь, ви опануєте різноманітні техніки вишивки, як от вишивка 
+            хрестиком, гладдю, мереживом, зерновим виводом. Дізнаєтеся про секрети традиційних 
+            візерунків і сучасних трендів. Наші заняття підходять як для початківців, так і 
+            для тих, хто хоче вдосконалити свої навички. Приєднуйтесь до нас, щоб відчути 
+            радість і зберегти українську культуру у своїх роботах!
+          </p>
+        </div>
+        <a href="reg.html" class="bth bth-big">Купити</a>
+      </div>
+    </div>
+    <div class="master-class-bg">
+      <img src="/img/fon2.jpg" alt="Background cover">
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <img class="footer-logo" src="/img/logo.png" alt="">
+        <span class="footer-items">
+          <a href=""><ion-icon name="logo-instagram"></ion-icon></a>
+          <a href=""><ion-icon name="logo-facebook"></ion-icon></a>
+          <a href=""><ion-icon name="logo-youtube"></ion-icon></a>
+          <a href=""><ion-icon name="logo-pinterest"></ion-icon></a>
+        </span>
+      </div>
+    </div>
+</footer>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // Отримуємо параметри URL
+  var params = new URLSearchParams(window.location.search);
+  var classTitle = params.get('title');
+
+  // Встановлюємо текст заголовку
+  if (classTitle) {
+    document.querySelector('h1').textContent = classTitle;
+  } else {
+    document.querySelector('h1').textContent = "Майстер-клас не знайдено";
+  }
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+/* #343434-сірий-текст #3F422E-зелений #D78B30-оранжевий */
+/*padding: Зверху / справа / снизу / зліва */
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400px;
+  font-size: 18px;
+  color: #343434;
+}
+
+/* утилітарні класи */
+.none {
+  display: none !important;
+}
+
+.visually-hidden { /*скриває елемент на сторінці*/
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  width: 0px;
+  height: 0px;
+  display: block;
+  margin-left: -10000px;
+  background: transparent; /*прозорий*/
+  font-size: 0;
+}
+
+
+.container {
+  width: 1190px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a {
+  text-decoration: none;
+  color: #343434;
+}

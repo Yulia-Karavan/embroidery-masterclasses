@@ -1,0 +1,127 @@
+.you-study {
+  padding-bottom: 110px;
+  padding-top: 110px;
+}
+
+.you-study .p-name {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 14px;
+  /* or 44% */
+  letter-spacing: -0.456px;
+  /* display: flex;
+  align-items: center; */
+  padding-top: 30px;
+}
+
+.you-study-steps {
+  padding-top: 50px;
+  padding-left: 59px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  column-gap: 71px;
+}
+
+.step {
+  max-width: 300px;
+  position: relative;
+}
+
+.step-img {
+  width: 100%;
+  /* height: 100%; 404px */
+  border-radius: 50px;
+  /* height: 400px; */
+}
+
+.step-name { 
+  background: #3F422E;
+  border-radius: 50px;
+  width: 200px;
+  height: 42px;
+  position: absolute;
+  font-size: 16px;
+  top: 99%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.step-name p {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  /* identical to box height, or 125% */
+  letter-spacing: -0.176px;
+  color: #FFFFFF;
+  padding-top: 10px;
+  text-align: center;
+  }
+
+
+@media (max-width: 800px) {
+  .you-study h1 {
+    font-size: 42px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  .you-study-steps {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center;
+    justify-items: center; */
+    align-items: center;
+  }
+  .step {
+    padding-bottom: 30px;
+    max-width: 500px;
+    max-height: 700px;
+  }
+  .step-img{
+    max-height: 660px;
+  }
+  .step-name {
+    top: 94%;
+    right: 50%;
+    width: 300px;
+    height: 64px;
+    font-size: 25px; 
+  }
+  .step-name p {
+    padding-top: 20px;
+  }
+}
+
+@media (max-width: 460px) {
+  .you-study h1 {
+    font-size: 52px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+  .you-study-steps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .step {
+    padding-bottom: 30px;
+    max-width: 600px;
+    max-height: 800px;
+  }
+  .step-img{
+    max-height: 960px;
+  }
+  .step-name {
+    width: 400px;
+    height: 84px;
+    font-size: 40px; 
+    top: 93%;
+  }
+  .step-name p {
+    padding-top: 30px;
+  }
+}

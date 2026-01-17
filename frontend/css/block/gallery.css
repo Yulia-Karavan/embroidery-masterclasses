@@ -1,0 +1,72 @@
+.gallery {
+  padding-bottom: 110px;
+}
+
+.gallery-name p {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 32px;
+  /* or 100% */
+  letter-spacing: -0.608px;
+}
+
+.gallery-container {
+  display: flex;
+  overflow-x: scroll;
+  /* padding-left: 59px; */
+  width: 884px;
+}
+
+.gallery-container::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-photo {
+  padding-top: 25px;
+  width: 100%;
+  display: flex;
+  grid-template-columns: auto auto auto;
+  grid-gap: 52px;
+}
+
+.gallery-photo img {
+  width: 260px;
+  border-radius: 12px;
+  height: 396px;
+  object-fit: cover; /*щоб зображення не сплющувалося*/
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.controls #right-bth, .controls #left-bth {
+  width: 85px;
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .gallery-name p {
+    font-size: 42px;
+  }
+  .controls #right-bth, .controls #left-bth {
+    width: 115px;
+  }
+  .gallery-photo img {
+    width: 390px;
+    height: 526px;
+  }
+}
+
+@media (max-width: 460px) {
+  .gallery {
+    padding-top: 60px;
+  }
+  .gallery-name p {
+    font-size: 52px;
+  }
+}

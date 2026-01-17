@@ -1,0 +1,157 @@
+.header {
+  background-color: #3F422E;
+  color: #ffffffff;
+}
+
+@media (max-width: 1220px) {
+  .header .container {
+    padding-top: 23px;
+    padding-bottom: 23px;
+    background-color: #3F422E;
+  }
+
+  .header {
+    background-color: #fff;
+  }
+}
+
+.header .container {
+  padding-top: 23px;
+  padding-bottom: 23px;
+  color: #ffffffff;
+  font-size: 111%;
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo img {
+  width: 75px;
+}
+
+.header-nav {
+  left: 300px;
+  margin-left: 75px;
+}
+
+.header-nav ul {
+  display: flex;
+}
+
+.header-nav li:not(:last-child) {
+  margin-right: 55px;
+}
+
+.header-nav a {
+  color: #ffffffff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.header-nav a:hover {
+  color: #D78B30;
+}
+
+/* Кошик в хедері */
+.header-cart {
+  position: relative;
+  margin-left: auto;
+  margin-right: 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.header-cart:hover {
+  transform: scale(1.1);
+}
+
+.header-cart ion-icon {
+  font-size: 28px;
+  color: #ffffffff;
+  transition: color 0.2s ease;
+}
+
+.header-cart:hover ion-icon {
+  color: #D78B30;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: #D78B30;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: 'Inter';
+}
+
+.header-login {
+  margin-left: 0;
+}
+
+.header-login > * + *{
+  margin-left: 5px;
+}
+
+.header-login a{
+  color: #ffffffff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.header-login a:hover {
+  color: #D78B30;
+}
+
+.bth, a.bth {
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 13px;
+  padding-right: 13px;
+  color: black;
+  background: #D78B30;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: color 0.2s ease;
+}
+.bth:hover, a.bth:hover {
+  opacity: 0.8;
+  color: #fff;
+}
+
+@media (max-width: 800px) {
+  .header .container {
+    font-size: 141%;
+  }
+  .header-logo img {
+    width: 105px;
+  }
+  .header-nav {
+    left: 300px;
+    margin-left: 55px;
+  }
+}
+
+@media (max-width: 460px) {
+  .header .container {
+    font-size: 151%;
+  }
+  .header-logo img {
+    width: 125px;
+  }
+  .header-nav {
+    left: 300px;
+    margin-left: 35px;
+  }
+}

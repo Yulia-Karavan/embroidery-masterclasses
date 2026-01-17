@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/block/master.css">
+  <link rel="stylesheet" href="/css/fonts/font/stylesheet.css">
+  <link rel="stylesheet" href="/css/block/header.css">
+  <link rel="stylesheet" href="/css/block/footer.css">
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/base.css">
+
+  <title>Майстер-класи</title>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-row">
+        <div class="header-logo"><img src="/img/logo.png" alt="Logo"></div>
+        <nav class="header-nav">
+          <ul>
+            <li><a href="index.html">головна</a></li>
+            <li><a href="gallery.html">галерея</a></li>
+            <li><a href="#">майстер-класи</a></li>
+          </ul>
+        </nav>
+        <div class="header-cart">
+          <ion-icon name="cart-outline"></ion-icon>
+          <span class="cart-count">0</span>
+        </div>
+        <div class="header-login">
+          <a href="log.html">увійти</a>
+          <a href="reg.html" class="bth">зареєструватись</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Міні-кошик (спливаюче вікно) -->
+  <div class="cart-popup" id="cartPopup">
+    <div class="cart-popup-header">
+      <h3>Кошик</h3>
+      <button class="cart-close" id="cartClose">
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+    </div>
+    <div class="cart-popup-items" id="cartPopupItems">
+      <!-- Товари будуть додаватися тут -->
+    </div>
+    <div class="cart-popup-footer">
+      <div class="cart-total">
+        <span>Загалом:</span>
+        <span id="cartTotalPrice">0 грн</span>
+      </div>
+      <button class="cart-checkout-btn">Оформити замовлення</button>
+    </div>
+  </div>
+  <div class="cart-overlay" id="cartOverlay"></div>
+
+  <section class="master" id="master" style="padding-top: 50px;">
+    <div class="container">
+    
+      <div class="master-name" style="padding-bottom: 30px;"><p>Майстер-класи</p></div>
+          
+      <div class="master-row"  id="master-container">
+      </div>
+      
+    </div>
+  </section>
+  
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <img class="footer-logo" src="/img/logo.png" alt="">
+        <span class="footer-items">
+          <a href=""><ion-icon name="logo-instagram"></ion-icon></a>
+          <a href=""><ion-icon name="logo-facebook"></ion-icon></a>
+          <a href=""><ion-icon name="logo-youtube"></ion-icon></a>
+          <a href=""><ion-icon name="logo-pinterest"></ion-icon></a>
+        </span>
+      </div>
+    </div>
+</footer>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script>
+  // код для додаваня карточок з бази даниз
+  async function loadMasterClasses() {
+  try {
+    const res = await fetch("http://localhost:3000/api/master-classes");
+    const data = await res.json();
+    const container = document.getElementById("master-container");
+    container.innerHTML = "";
+
+    data.forEach(item => {
+      const card = `
+        <div class="master-col">
+          <div class="product-img">
+            <img src="${item.image_url}" alt="">
+          </div>
+          <div class="product-info">
+            <a href="#" class="class-link"><h3>${item.title}</h3></a>
+            <div class="teacher">
+              <div class="photo"><img src="${item.teacher_photo}" class="personPhoto"></div>
+              ${item.teacher}
+            </div>
+            <span class="prise">
+              <div class="icon">
+                <ion-icon name="heart-outline" class="icon"></ion-icon>
+                <ion-icon name="chatbubbles-outline" class="icon2"></ion-icon>
+              </div>
+              <p>${item.price} грн</p>
+            </span>
+            <button class="add-to-cart-btn" data-id="${item.id}" data-title="${item.title}" data-price="${item.price}" data-image="${item.image_url}">
+              <ion-icon name="cart-outline"></ion-icon>
+              Додати в кошик
+            </button>
+          </div>
+        </div>
+      `;
+      container.insertAdjacentHTML("beforeend", card);
+    });
+  } catch (err) {
+    console.error("Load error:", err);
+  }
+}
+
+//--- незабути добавити в карточкі там де назва товару <a href="#" class="class-link">
+document.addEventListener("DOMContentLoaded", loadMasterClasses);
+
+  // перехід на сторінку з інформацією про майстер клас
+document.addEventListener("click", function(event) {
+  if (event.target.closest(".class-link")) {
+    event.preventDefault();
+    const title = event.target.closest(".class-link").innerText.trim();
+    window.location.href = 'master-clas-info.html?title=' + encodeURIComponent(title);
+  }
+});
+//---
+
+// сердечко світиться
+document.addEventListener("click", function(event) {
+  const icon = event.target;
+  if (icon.tagName.toLowerCase() === "ion-icon" && icon.classList.contains("icon")) {
+    if (icon.getAttribute("name") === "heart-outline") {
+      icon.setAttribute("name", "heart");
+      } else {
+        icon.setAttribute("name", "heart-outline");
+      }
+    }
+  });
+// світиться коментар
+document.addEventListener("click", function(event) {
+  const icon = event.target;
+  if (icon.tagName.toLowerCase() === "ion-icon" && icon.classList.contains("icon2")) {
+    const originalName = icon.getAttribute("name");
+    const newName = originalName === "chatbubbles-outline" ? "chatbubbles" : "chatbubbles-outline";
+
+    icon.setAttribute("name", newName);
+
+    setTimeout(() => {
+    icon.setAttribute("name", originalName);
+    }, 100);
+  }
+});
+
+// === КОШИК: Додавання товарів ===
+
+// Функція для оновлення лічильника кошика
+async function updateCartCount() {
+  try {
+    const res = await fetch("http://localhost:3000/api/cart");
+    const cartItems = await res.json();
+    const totalCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+    
+    const cartCountElement = document.querySelector(".cart-count");
+    if (cartCountElement) {
+      cartCountElement.textContent = totalCount;
+    }
+  } catch (err) {
+    console.error("Error updating cart count:", err);
+  }
+}
+
+// Функція для показу сповіщення
+function showNotification(message, type = "success") {
+  const notification = document.createElement("div");
+  notification.className = `cart-notification ${type}`;
+  notification.innerHTML = `
+    <ion-icon name="${type === 'success' ? 'checkmark-circle' : 'alert-circle'}"></ion-icon>
+    <span>${message}</span>
+  `;
+  document.body.appendChild(notification);
+  
+  // Анімація появи
+  setTimeout(() => notification.classList.add("show"), 10);
+  
+  // Видалення через 3 секунди
+  setTimeout(() => {
+    notification.classList.remove("show");
+    setTimeout(() => notification.remove(), 300);
+  }, 3000);
+}
+
+// Обробка кліку на кнопку "Додати в кошик"
+document.addEventListener("click", async function(event) {
+  const btn = event.target.closest(".add-to-cart-btn");
+  if (!btn) return;
+  
+  event.preventDefault();
+  
+  const masterClassId = btn.getAttribute("data-id");
+  const title = btn.getAttribute("data-title");
+  
+  // Блокуємо кнопку на час запиту
+  btn.disabled = true;
+  btn.style.opacity = "0.6";
+  
+  try {
+    const res = await fetch("http://localhost:3000/api/cart", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ master_class_id: masterClassId, quantity: 1 })
+    });
+    
+    const data = await res.json();
+    
+    if (res.ok) {
+      showNotification(`✓ "${title}" додано в кошик!`, "success");
+      await updateCartCount();
+    } else {
+      showNotification("Помилка при додаванні в кошик", "error");
+    }
+  } catch (err) {
+    console.error("Error adding to cart:", err);
+    showNotification("Помилка з'єднання з сервером", "error");
+  } finally {
+    // Розблоковуємо кнопку
+    btn.disabled = false;
+    btn.style.opacity = "1";
+  }
+});
+
+// Оновлюємо лічильник при завантаженні сторінки
+document.addEventListener("DOMContentLoaded", updateCartCount);
+
+// === МІНІ-КОШИК (спливаюче вікно) ===
+
+const cartPopup = document.getElementById("cartPopup");
+const cartOverlay = document.getElementById("cartOverlay");
+const cartClose = document.getElementById("cartClose");
+const headerCart = document.querySelector(".header-cart");
+
+// Функція для відображення товарів в кошику
+async function displayCartItems() {
+  try {
+    const res = await fetch("http://localhost:3000/api/cart");
+    const cartItems = await res.json();
+    const container = document.getElementById("cartPopupItems");
+    
+    if (cartItems.length === 0) {
+      container.innerHTML = `
+        <div class="cart-empty">
+          <ion-icon name="cart-outline"></ion-icon>
+          <p>Кошик порожній</p>
+        </div>
+      `;
+      document.getElementById("cartTotalPrice").textContent = "0 грн";
+      return;
+    }
+    
+    // Формуємо HTML для кожного товару
+    let html = "";
+    let total = 0;
+    
+    cartItems.forEach(item => {
+      const itemTotal = parseFloat(item.price) * item.quantity;
+      total += itemTotal;
+      
+      html += `
+        <div class="cart-item" data-cart-id="${item.id}">
+          <div class="cart-item-image">
+            <img src="${item.image_url}" alt="${item.title}">
+          </div>
+          <div class="cart-item-info">
+            <div class="cart-item-title">${item.title}</div>
+            <div class="cart-item-teacher">${item.teacher}</div>
+            <div class="cart-item-bottom">
+              <div class="cart-item-quantity">Кількість: ${item.quantity}</div>
+              <div class="cart-item-price">${itemTotal.toFixed(2)} грн</div>
+            </div>
+            <button class="cart-item-remove" onclick="removeFromCart(${item.id}, '${item.title}')">
+              Видалити
+            </button>
+          </div>
+        </div>
+      `;
+    });
+    
+    container.innerHTML = html;
+    document.getElementById("cartTotalPrice").textContent = `${total.toFixed(2)} грн`;
+    
+  } catch (err) {
+    console.error("Error displaying cart:", err);
+  }
+}
+
+// Функція для видалення товару з кошика
+async function removeFromCart(cartId, title) {
+  try {
+    const res = await fetch(`http://localhost:3000/api/cart/${cartId}`, {
+      method: "DELETE"
+    });
+    
+    if (res.ok) {
+      showNotification(`"${title}" видалено з кошика`, "success");
+      await displayCartItems();
+      await updateCartCount();
+    } else {
+      showNotification("Помилка при видаленні", "error");
+    }
+  } catch (err) {
+    console.error("Error removing from cart:", err);
+    showNotification("Помилка з'єднання з сервером", "error");
+  }
+}
+
+// Відкрити міні-кошик
+function openCart() {
+  cartPopup.classList.add("active");
+  cartOverlay.classList.add("active");
+  displayCartItems();
+}
+
+// Закрити міні-кошик
+function closeCart() {
+  cartPopup.classList.remove("active");
+  cartOverlay.classList.remove("active");
+}
+
+// Обробники подій
+headerCart.addEventListener("click", openCart);
+cartClose.addEventListener("click", closeCart);
+cartOverlay.addEventListener("click", closeCart);
+
+// Закрити по ESC
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && cartPopup.classList.contains("active")) {
+    closeCart();
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/fonts/font/stylesheet.css">
+  <link rel="stylesheet" href="/css/gallery.css">
+  <link rel="stylesheet" href="/css/block/footer.css">
+  <link rel="stylesheet" href="/css/block/header.css">
+  <title>EMBROIDERY студія художньої вишивки</title>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-row">
+        <div class="header-logo"><img src="/img/logo.png" alt="Logo"></div>
+        <nav class="header-nav">
+          <ul>
+            <li><a href="index.html">головна</a></li>
+            <li><a href="#">галерея</a></li>
+            <li><a href="master-clas.html">майстер-класи</a></li>
+          </ul>
+        </nav>
+        <div class="header-cart">
+          <ion-icon name="cart-outline"></ion-icon>
+          <span class="cart-count">0</span>
+        </div>
+        <div class="header-login">
+          <a href="log.html">увійти</a>
+          <a href="reg.html" class="bth">зареєструватись</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="gallery">
+    <div class="container">
+      <h1>Галлерея робіт наших учнів</h1>
+        <ul class="list">
+          <li class="list_item active" data-id="all">Все</li>
+          <li class="list_item" data-id="хр">Хрестиком</li>
+          <li class="list_item" data-id="гл">Гладдю</li>
+          <li class="list_item" data-id="шн">Шнуром</li>
+        </ul>
+      <div class="blocks">
+        
+          <div class="block_item хр"><img src="/img/gallery2/хр1.jpg"></div>
+          <div class="block_item гл"><img src="/img/gallery2/гл1.jpg"></div>
+          <div class="block_item шн"><img src="/img/gallery2/шн1.jpg"></div>
+          <div class="block_item гл"><img src="/img/gallery2/гл2.jpg"></div>        
+          <div class="block_item хр"><img src="/img/gallery2/хр2.jpg"></div>
+          <div class="block_item гл"><img src="/img/gallery2/гл3.jpg"></div>
+          <div class="block_item шн"><img src="/img/gallery2/шн2.jpg"></div>
+          <div class="block_item шн"><img src="/img/gallery2/шн3.jpg"></div>
+          <div class="block_item гл"><img src="/img/gallery2/гл4.jpg"></div>
+          <div class="block_item шн"><img src="/img/gallery2/шн4.jpg"></div>
+          <div class="block_item хр"><img src="/img/gallery2/хр3.jpg"></div>
+          <div class="block_item хр"><img src="/img/gallery2/хр4.jpg"></div>
+          <div class="block_item шн"><img src="/img/gallery2/шн5.jpg"></div>
+          <div class="block_item гл"><img src="/img/gallery2/гл5.jpg"></div>
+          <div class="block_item гл"><img src="/img/gallery2/гл6.jpg"></div>
+          <div class="block_item хр"><img src="/img/gallery2/хр5.jpg"></div>
+          <div class="block_item хр"><img src="/img/gallery2/хр6.jpg"></div>
+          <div class="block_item шн"><img src="/img/gallery2/шн6.jpg"></div>
+          <div class="block_item шн"><img src="/img/gallery2/шн7.jpg"></div>
+          <div class="block_item шл"><img src="/img/gallery2/гл7.jpg"></div>
+          <div class="block_item шн "><img src="/img/gallery2/шн8.jpg"></div>
+          <div class="block_item хр"><img src="/img/gallery2/хр8.jpg"></div>
+          <div class="block_item гл"><img src="/img/gallery2/гл8.jpg"></div>
+          <div class="block_item шн"><img src="/img/gallery2/шн9.jpg"></div>
+          <div class="block_item гл"><img src="/img/gallery2/гл9.jpg"></div>
+          <div class="block_item гл"><img src="/img/gallery2/гл10.jpg"></div>
+          <div class="block_item хр"><img src="/img/gallery2/хр9.jpg"></div>
+          <div class="block_item шн"><img src="/img/gallery2/шн10.jpg"></div>
+          <div class="block_item гл"><img src="/img/gallery2/гл11.jpg"></div>
+          <div class="block_item шн"><img src="/img/gallery2/шн11.jpg"></div>
+          <div class="block_item хр"><img src="/img/gallery2/хр10.jpg"></div>
+          <div class="block_item шн"><img src="/img/gallery2/шн12.jpg"></div>
+          <div class="block_item гл"><img src="/img/gallery2/гл12.jpeg"></div>
+          <div class="block_item гл"><img src="/img/gallery2/гл13.jpg"></div>
+          <div class="block_item шн"><img src="/img/gallery2/шн13.jpeg"></div>
+
+        
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <img class="footer-logo" src="/img/logo.png" alt="">
+        <span class="footer-items">
+          <a href="https://www.instagram.com/world_embroidery/"><ion-icon name="logo-instagram"></ion-icon></a>
+          <a href=""><ion-icon name="logo-facebook"></ion-icon></a>
+          <a href=""><ion-icon name="logo-youtube"></ion-icon></a>
+          <a href=""><ion-icon name="logo-pinterest"></ion-icon></a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script>
+
+  // галлерея зображень
+  const list = document.querySelector('.list'),
+    items = document.querySelectorAll('.block_item')
+    listItems = document.querySelectorAll('.list_item')
+
+    function filter() {
+      list.addEventListener('click', event => {
+        const targetId = event.target.dataset.id;
+        const target = event.target
+        
+        if(target.classList.contains('list_item')){
+          listItems.forEach(listItem => listItem.classList.remove('active'))
+          target.classList.add('active')
+        }
+        
+        switch(targetId) {
+          case 'all':
+            getItems('block_item')
+            break
+          case 'хр':
+            getItems(targetId)
+            break
+          case 'гл' :
+            getItems(targetId)
+            break
+          case 'шн' :
+            getItems(targetId)
+            break
+          
+        }
+      })
+    }
+  filter()
+
+  function getItems(className) {
+    items.forEach(item => {
+              if (item.classList.contains(className)){
+                item.style.display = 'block'
+              } else {
+                item.style.display = 'none'
+              }
+            })
+  }
+</script>
+</body>
+</html>

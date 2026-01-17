@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/fonts/font/stylesheet.css">
+  <!-- Blocks -->
+  <link rel="stylesheet" href="/css/block/header.css">
+  <link rel="stylesheet" href="/css/block/name.css">
+  <link rel="stylesheet" href="/css/block/home.css">
+  <link rel="stylesheet" href="/css/block/you-study.css">
+  <link rel="stylesheet" href="/css/block/gallery.css">
+  <link rel="stylesheet" href="/css/block/master.css">
+  <link rel="stylesheet" href="/css/block/footer.css">
+  <title>EMBROIDERY студія художньої вишивки</title>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-row">
+        <div class="header-logo"><img src="/img/logo.png" alt="Logo"></div>
+        <nav class="header-nav">
+          <ul>
+            <li><a href="index.html">головна</a></li>
+            <li><a href="gallery.html">галерея</a></li>
+            <li><a href="master-clas.html">майстер-класи</a></li>
+          </ul>
+        </nav>
+        <div class="header-cart">
+          <ion-icon name="cart-outline"></ion-icon>
+          <span class="cart-count">0</span>
+        </div>
+        <div class="header-login">
+          <a href="log.html">увійти</a>
+          <a href="reg.html" class="bth">зареєструватись</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Міні-кошик (спливаюче вікно) -->
+  <div class="cart-popup" id="cartPopup">
+    <div class="cart-popup-header">
+      <h3>Кошик</h3>
+      <button class="cart-close" id="cartClose">
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+    </div>
+    <div class="cart-popup-items" id="cartPopupItems">
+      <!-- Товари будуть додаватися тут -->
+    </div>
+    <div class="cart-popup-footer">
+      <div class="cart-total">
+        <span>Загалом:</span>
+        <span id="cartTotalPrice">0 грн</span>
+      </div>
+      <button class="cart-checkout-btn">Оформити замовлення</button>
+    </div>
+  </div>
+  <div class="cart-overlay" id="cartOverlay"></div>
+
+  <main>
+    <section class="name">
+      <div class="container">
+        <div class="name-content">
+          <h1 class="name-heading">EMBROIDERY</h1>
+          <p>СТУДІЯ ХУДОЖНЬОЇ ВИШИВКИ</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="home">
+      <div class="container">
+        <div class="image">
+          <img src="/img/home.webp" alt="Big Image">
+        </div>
+        <div class="text">
+          <h1>Про студію художньої вишивки 
+            “EMBROIDERY”</h1>
+          <p>Embroidery це молода команда яка вже встигла полюбитись багатьом підліткам та дорослим. Наша команда вишивки – це 
+            колектив талановитих майстринь, які перетворюють тканину на справжні витвори мистецтва та навчать цього вас. 
+            Ми спеціалізуємося на створенні унікальних вишиванок, використовуючи традиційні техніки та сучасні дизайнерські рішення.
+            На сайті ви зможете знайти майстер-класи які вам до вподоби, записатися на пробне заняття та зв'язатися з нами. 
+            </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="you-study">
+      <div class="container">
+        <p class="p-name">У нас ви навчитеся вишивати:</p>
+        <div class="you-study-steps">
+          <div class="step">
+            <img class="step-img" src="/img/steps/step01.jpg" alt="">
+            <div class="step-name"><p>хрестиком</p></div>
+          </div>
+          <div class="step">
+            <img class="step-img" src="/img/steps/step02.jpg" alt="">
+            <div class="step-name"><p>гладдю</p></div>
+          </div>
+          <div class="step">
+            <img class="step-img" src="/img/steps/step03.jpg" alt="">
+            <div class="step-name"><p>шнуром</p></div>
+          </div>
+ 
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery" id="gallery">
+      <div class="container">
+        <div class="gallery-name"><p>Роботи наших учнів</p></div>
+        <div class="controls">
+          <img src="/img/gallery/left.png" alt="left" id="left-bth">
+          <div class="gallery-container">
+            <div class="gallery-photo">
+              <span><img src="/img/gallery/01.jpg"></span>
+              <span><img src="/img/gallery/02.jpg"></span>
+              <span><img src="/img/gallery/03.jpg"></span>
+            </div>
+            <div class="gallery-photo">
+              <span><img src="/img/gallery/04.jpg"></span>
+              <span><img src="/img/gallery/05.jpg"></span>
+              <span><img src="/img/gallery/06.jpg"></span>
+            </div>
+            <div class="gallery-photo">
+              <span><img src="/img/gallery/07.jpg"></span>
+              <span><img src="/img/gallery/08.jpg"></span>
+              <span><img src="/img/gallery/09.jpg"></span>
+            </div>
+            <div class="gallery-photo">
+              <span><img src="/img/gallery/10.jpg"></span>
+              <span><img src="/img/gallery/11.jpg"></span>
+              <span><img src="/img/gallery/12.jpeg"></span>
+            </div>
+            <div class="gallery-photo">
+              <span><img src="/img/gallery/13.jpg"></span>
+              <span><img src="/img/gallery/14.jpg"></span>
+              <span><img src="/img/gallery/15.jpg"></span>
+            </div>
+            <div class="gallery-photo">
+              <span><img src="/img/gallery/16.jpg"></span>
+              <span><img src="/img/gallery/17.jpeg"></span>
+              <span><img src="/img/gallery/18.jpg"></span>
+            </div>
+            <div class="gallery-photo">
+              <span><img src="/img/gallery/19.jpg"></span>
+              <span><img src="/img/gallery/20.jpg"></span>
+              <span><img src="/img/gallery/21.jpg"></span>
+            </div>
+          </div>
+          <img src="/img/gallery/rigt.png" alt="right" id="right-bth">
+        </div>
+        
+      </div>
+
+    </section>
+
+    <section class="master" id="master">
+      <div class="container">
+        <div class="master-name"><p>Майстер-класи</p><a href="master-clas.html">(дивитися більше)</a></div>
+        <div class="master-row m-r-one">
+          <div class="master-col">
+            <div class="product-img">
+              <img src="/img/master-class/01.jpg" alt="">
+            </div>
+            <div class="product-info">
+              <a><h3>Мережка шабак, плетена мережка</h3></a>
+              <div class="teacher"><div class="photo"><img src="/img/master-class/p_01.jpg" class="personPhoto"></div>Демчак Ольга</div>
+              <span class="prise">
+                <div class="icon"><ion-icon name="heart-outline" class="icon"></ion-icon>
+                <ion-icon name="chatbubbles-outline" class="icon2"></ion-icon></div>
+                <p>215грн</p></span>
+              <button class="add-to-cart-btn" data-id="1" data-title="Мережка шабак, плетена мережка" data-price="215" data-image="/img/master-class/01.jpg">
+                <ion-icon name="cart-outline"></ion-icon>
+                Додати в кошик
+              </button>
+            </div>
+            <!-- product-info -->
+          </div>
+          <!-- master-col -->
+          <div class="master-col">
+            <div class="product-img">
+              <img src="/img/master-class/02.jpeg" alt="">
+            </div>
+            <div class="product-info">
+              <div id="product-info-h3"><a><h3>Візерунок з Мурованокуриловецької жіночої сорочки</h3></a></div>
+              <div class="teacher"><div class="photo"><img src="/img/master-class/p_02.jpg" class="personPhoto"></div>Кирилюк Сніжана</div>
+              <span class="prise"><div class="icon"><ion-icon name="heart-outline"  class="icon"></ion-icon>
+              <ion-icon name="chatbubbles-outline" class="icon2"></ion-icon></div><p>150грн</p></span>
+              <button class="add-to-cart-btn" data-id="2" data-title="Візерунок з Мурованокуриловецької жіночої сорочки" data-price="150" data-image="/img/master-class/02.jpeg">
+                <ion-icon name="cart-outline"></ion-icon>
+                Додати в кошик
+              </button>
+            </div>
+            <!-- product-info -->
+          </div>
+          <!-- master-col -->
+          <div class="master-col">
+            <div class="product-img">
+              <img src="/img/master-class/03.jpeg" alt="">
+            </div>
+            <div class="product-info"><a><h3>Мережка ляхівка</h3></a>
+              <div class="teacher"><div class="photo"><img src="/img/master-class/p_03.jpg" class="personPhoto"></div>Яценюк Валерія</div>
+              <span class="prise"><div class="icon"><ion-icon name="heart-outline" class="icon"></ion-icon>
+              <ion-icon name="chatbubbles-outline" class="icon2"></ion-icon></div><p>300грн</p></span>
+              <button class="add-to-cart-btn" data-id="3" data-title="Мережка ляхівка" data-price="300" data-image="/img/master-class/03.jpeg">
+                <ion-icon name="cart-outline"></ion-icon>
+                Додати в кошик
+              </button>
+            </div>
+            <!-- product-info -->
+          </div>
+          <!-- master-col -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <img class="footer-logo" src="/img/logo.png" alt="">
+        <span class="footer-items">
+          <a href="https://www.instagram.com/world_embroidery/"><ion-icon name="logo-instagram"></ion-icon></a>
+          <a href=""><ion-icon name="logo-facebook"></ion-icon></a>
+          <a href=""><ion-icon name="logo-youtube"></ion-icon></a>
+          <a href=""><ion-icon name="logo-pinterest"></ion-icon></a>
+        </span>
+      </div>
+    </div>
+  </footer>
+  
+  
+  <script src="script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  
+  <script>
+    // === КОШИК: Додавання товарів ===
+
+    // Функція для оновлення лічильника кошика
+    async function updateCartCount() {
+      try {
+        const res = await fetch("http://localhost:3000/api/cart");
+        const cartItems = await res.json();
+        const totalCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+        
+        const cartCountElement = document.querySelector(".cart-count");
+        if (cartCountElement) {
+          cartCountElement.textContent = totalCount;
+        }
+      } catch (err) {
+        console.error("Error updating cart count:", err);
+      }
+    }
+
+    // Функція для показу сповіщення
+    function showNotification(message, type = "success") {
+      const notification = document.createElement("div");
+      notification.className = `cart-notification ${type}`;
+      notification.innerHTML = `
+        <ion-icon name="${type === 'success' ? 'checkmark-circle' : 'alert-circle'}"></ion-icon>
+        <span>${message}</span>
+      `;
+      document.body.appendChild(notification);
+      
+      // Анімація появи
+      setTimeout(() => notification.classList.add("show"), 10);
+      
+      // Видалення через 3 секунди
+      setTimeout(() => {
+        notification.classList.remove("show");
+        setTimeout(() => notification.remove(), 300);
+      }, 3000);
+    }
+
+    // Обробка кліку на кнопку "Додати в кошик"
+    document.addEventListener("click", async function(event) {
+      const btn = event.target.closest(".add-to-cart-btn");
+      if (!btn) return;
+      
+      event.preventDefault();
+      
+      const masterClassId = btn.getAttribute("data-id");
+      const title = btn.getAttribute("data-title");
+      
+      // Блокуємо кнопку на час запиту
+      btn.disabled = true;
+      btn.style.opacity = "0.6";
+      
+      try {
+        const res = await fetch("http://localhost:3000/api/cart", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ master_class_id: masterClassId, quantity: 1 })
+        });
+        
+        const data = await res.json();
+        
+        if (res.ok) {
+          showNotification(`✓ "${title}" додано в кошик!`, "success");
+          await updateCartCount();
+        } else {
+          showNotification("Помилка при додаванні в кошик", "error");
+        }
+      } catch (err) {
+        console.error("Error adding to cart:", err);
+        showNotification("Помилка з'єднання з сервером", "error");
+      } finally {
+        // Розблоковуємо кнопку
+        btn.disabled = false;
+        btn.style.opacity = "1";
+      }
+    });
+
+    // Оновлюємо лічильник при завантаженні сторінки
+    document.addEventListener("DOMContentLoaded", updateCartCount);
+
+    // === МІНІ-КОШИК (спливаюче вікно) ===
+
+    const cartPopup = document.getElementById("cartPopup");
+    const cartOverlay = document.getElementById("cartOverlay");
+    const cartClose = document.getElementById("cartClose");
+    const headerCart = document.querySelector(".header-cart");
+
+    // Функція для відображення товарів в кошику
+    async function displayCartItems() {
+      try {
+        const res = await fetch("http://localhost:3000/api/cart");
+        const cartItems = await res.json();
+        const container = document.getElementById("cartPopupItems");
+        
+        if (cartItems.length === 0) {
+          container.innerHTML = `
+            <div class="cart-empty">
+              <ion-icon name="cart-outline"></ion-icon>
+              <p>Кошик порожній</p>
+            </div>
+          `;
+          document.getElementById("cartTotalPrice").textContent = "0 грн";
+          return;
+        }
+        
+        // Формуємо HTML для кожного товару
+        let html = "";
+        let total = 0;
+        
+        cartItems.forEach(item => {
+          const itemTotal = parseFloat(item.price) * item.quantity;
+          total += itemTotal;
+          
+          html += `
+            <div class="cart-item" data-cart-id="${item.id}">
+              <div class="cart-item-image">
+                <img src="${item.image_url}" alt="${item.title}">
+              </div>
+              <div class="cart-item-info">
+                <div class="cart-item-title">${item.title}</div>
+                <div class="cart-item-teacher">${item.teacher}</div>
+                <div class="cart-item-bottom">
+                  <div class="cart-item-quantity">Кількість: ${item.quantity}</div>
+                  <div class="cart-item-price">${itemTotal.toFixed(2)} грн</div>
+                </div>
+                <button class="cart-item-remove" onclick="removeFromCart(${item.id}, '${item.title}')">
+                  Видалити
+                </button>
+              </div>
+            </div>
+          `;
+        });
+        
+        container.innerHTML = html;
+        document.getElementById("cartTotalPrice").textContent = `${total.toFixed(2)} грн`;
+        
+      } catch (err) {
+        console.error("Error displaying cart:", err);
+      }
+    }
+
+    // Функція для видалення товару з кошика
+    async function removeFromCart(cartId, title) {
+      try {
+        const res = await fetch(`http://localhost:3000/api/cart/${cartId}`, {
+          method: "DELETE"
+        });
+        
+        if (res.ok) {
+          showNotification(`"${title}" видалено з кошика`, "success");
+          await displayCartItems();
+          await updateCartCount();
+        } else {
+          showNotification("Помилка при видаленні", "error");
+        }
+      } catch (err) {
+        console.error("Error removing from cart:", err);
+        showNotification("Помилка з'єднання з сервером", "error");
+      }
+    }
+
+    // Відкрити міні-кошик
+    function openCart() {
+      cartPopup.classList.add("active");
+      cartOverlay.classList.add("active");
+      displayCartItems();
+    }
+
+    // Закрити міні-кошик
+    function closeCart() {
+      cartPopup.classList.remove("active");
+      cartOverlay.classList.remove("active");
+    }
+
+    // Обробники подій
+    headerCart.addEventListener("click", openCart);
+    cartClose.addEventListener("click", closeCart);
+    cartOverlay.addEventListener("click", closeCart);
+
+    // Закрити по ESC
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && cartPopup.classList.contains("active")) {
+        closeCart();
+      }
+    });
+  </script>
+</body>
+</html>
